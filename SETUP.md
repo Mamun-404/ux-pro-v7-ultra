@@ -194,19 +194,19 @@ This key is crucial for the bot to function. Set it as an environment variable.
 ### 💻 Windows (PowerShell)
 
 ```powershell
-$env:FERNET_KEY="U2-RUEhAuTmeCV3Ty3RNuN2kWj6twbkMeKZI6hmbUbM="
+$env:FERNET_KEY="tZcmnUPBtWCI7vzLFMowpZjwm4uG_icBYo72y1p6dRQ="
 ```
 
 ### 🐧 Linux / macOS / VPS
 
 ```bash
-export FERNET_KEY="U2-RUEhAuTmeCV3Ty3RNuN2kWj6twbkMeKZI6hmbUbM="
+export FERNET_KEY="tZcmnUPBtWCI7vzLFMowpZjwm4uG_icBYo72y1p6dRQ="
 ```
 
 > 💡 **Tip for VPS:** To make the `FERNET_KEY` persistent across reboots, add the `export` command to your shell profile (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```bash
-echo 'export FERNET_KEY="U2-RUEhAuTmeCV3Ty3RNuN2kWj6twbkMeKZI6hmbUbM="' >> ~/.bashrc && source ~/.bashrc
+echo 'export FERNET_KEY="tZcmnUPBtWCI7vzLFMowpZjwm4uG_icBYo72y1p6dRQ="' >> ~/.bashrc && source ~/.bashrc
 ```
 
 ---
