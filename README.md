@@ -116,7 +116,7 @@ Already installed everything? Use this shortcut to start the bot instantly by ju
   function ux { cd "$PSScriptRoot\uxpro"; .\.venv\Scripts\Activate.ps1; python ux.py }; Export-ModuleMember -Function ux
   ```
 
-> 📖 **Want more details?** [Check out the Full Setup Guide here →](SETUP.md)
+> 📖 **Want more details?** [Check out the Quick Setup Guide here →](QUICK_SETUP.md)
 
 ---
 
