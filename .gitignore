@@ -1,0 +1,44 @@
+# ─── Firebase Credentials ───────────────────────────────
+serviceAccountKey.json
+.temp_cred.json
+
+# ─── Admin Panel (NEVER upload to GitHub) ───────────────
+admin_dashboard*.html
+admin_panel*.html
+*admin*.html
+
+# ─── Python Cache & Virtual Env ─────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# ─── Bot Runtime / Session Files ────────────────────────
+.license_cache
+.sys_key
+.dev_id
+bot.pid
+session.json
+.session
+cookies.pkl
+*.log
+
+# ─── AI Model Files (large, regeneratable) ──────────────
+/uxpro/models/*.pkl
+/uxpro/models/*.json
+!/uxpro/models/performance.json
+!/uxpro/models/training_data.json
+!/uxpro/models/bot_mode.json
+!/uxpro/models/model_weight_stats.json
+!/uxpro/models/performance_extended.json
+
+# ─── CatBoost Training Info ─────────────────────────────
+/uxpro/catboost_info/
+
+# ─── OS / Editor Junk ───────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

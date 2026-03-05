@@ -1,0 +1,22 @@
+{
+  "xgboost": {
+    "wins": 0,
+    "losses": 0,
+    "accuracy": 0.0
+  },
+  "lightgbm": {
+    "wins": 0,
+    "losses": 0,
+    "accuracy": 0.0
+  },
+  "catboost": {
+    "wins": 0,
+    "losses": 0,
+    "accuracy": 0.0
+  },
+  "ensemble": {
+    "wins": 1337,
+    "losses": 393,
+    "accuracy": 77.28323699421965
+  }
+}
