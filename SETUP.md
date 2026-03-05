@@ -150,7 +150,7 @@ Once Git is installed, you can clone the UX PRO VIP repository:
 
 ```bash
 git clone https://github.com/Mamun-404/ux-pro-v7-ultra.git
-cd ux-pro-v7/uxpro
+cd ux-pro-v7-ultra/uxpro
 ```
 
 ---
@@ -162,7 +162,7 @@ Using a virtual environment isolates your project's dependencies from other Pyth
 ### 💻 Windows (PowerShell)
 
 ```powershell
-# Navigate to your project directory (e.g., cd C:\Users\YourUser\ux-pro-v7\uxpro)
+# Navigate to your project directory (e.g., cd C:\Users\YourUser\ux-pro-v7-ultra\uxpro)
 python -m venv .venv
 .venv\Scripts\activate
 ```
@@ -170,7 +170,7 @@ python -m venv .venv
 ### 🐧 Linux / macOS / VPS
 
 ```bash
-# Navigate to your project directory (e.g., cd /home/youruser/ux-pro-v7/uxpro)
+# Navigate to your project directory (e.g., cd /home/youruser/ux-pro-v7-ultra/uxpro)
 python3 -m venv .venv
 source .venv/bin/activate
 ```

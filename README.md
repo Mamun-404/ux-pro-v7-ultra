@@ -79,13 +79,33 @@ Before you start, please refer to the [SETUP Guide](SETUP.md) for detailed instr
 
 ---
 
-## 🚀 Installation
+## 🚀 Quick Start (One-Click Run)
+
+If you have already installed the requirements, you can use this shortcut to start the bot instantly.
+
+### ⚡ The "ux" Command Shortcut
+Want to start the bot just by typing `ux` from anywhere? Run this command **once** to set it up:
+
+#### For Linux / VPS / Termux:
+```bash
+echo "alias ux='cd $(pwd)/uxpro && source .venv/bin/activate && python ux.py'" >> ~/.bashrc && source ~/.bashrc
+```
+*Now, whenever you want to trade, just type:* `ux`
+
+#### For Windows (PowerShell):
+```powershell
+function ux { cd "$PSScriptRoot\uxpro"; .\.venv\Scripts\Activate.ps1; python ux.py }; Export-ModuleMember -Function ux
+```
+
+---
+
+## 📦 Full Installation
 
 ### Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/Mamun-404/ux-pro-v7-ultra.git
-cd ux-pro-v7/uxpro
+cd ux-pro-v7-ultra/uxpro
 ```
 
 ### Step 2 — Create a Virtual Environment *(Recommended)*
@@ -181,7 +201,7 @@ Once the bot starts, it will walk you through everything step by step:
 ## 📁 Project Structure
 
 ```
-ux-pro-v7/
+ux-pro-v7-ultra/
 │
 ├── uxpro/
 │   ├── ux.py                  # Obfuscated secure loader (entry point)
