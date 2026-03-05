@@ -208,41 +208,6 @@ ux-pro-v7/
 
 ---
 
-## 🔒 Security Architecture
-
-UX PRO uses a **5-layer security system** to protect source code and prevent unauthorized use:
-
-```
-  [ ux.py — Obfuscated Loader ]
-            │
-            ▼
-  [ Hardware Device ID ]
-  BIOS Serial + MAC + Machine ID
-  → SHA-256 hash (no file stored)
-            │
-            ▼
-  [ Firebase License Validation ]
-  Status check + Device binding
-            │
-            ▼
-  [ Remote Core Key Delivery ]
-  Decryption key only sent after
-  successful hardware + license check
-            │
-            ▼
-  [ ux.py.core — Decrypted in RAM ]
-  Never written to disk
-```
-
-| Layer | Protection |
-|-------|-----------|
-| 🔑 Hardware Lock | Device ID from BIOS + MAC + Machine ID. Cannot be copied or spoofed. |
-| 🔐 Encrypted Cache | License cache encrypted with hardware-derived Fernet key. Useless on other machines. |
-| ☁️ Remote Key | Core decryption key lives only on Firebase. Never stored locally. |
-| 🛡️ Obfuscated Loader | `ux.py` is obfuscated to prevent static code analysis. |
-| 💣 Self-Destruct | Debugging or tampering triggers immediate wipe of all project files. |
-
----
 
 ## 🛠️ Troubleshooting
 
