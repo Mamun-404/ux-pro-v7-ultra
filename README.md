@@ -6,7 +6,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-00d4ff?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20VPS-8b5cf6?style=for-the-badge&logo=linux&logoColor=white)](#)
-[![Security](https://img.shields.io/badge/Security-Military%20Grade-f59e0b?style=for-the-badge&logo=shield&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-Active-10b981?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Telegram](https://img.shields.io/badge/Get%20Access-@U9KNOWN__X-00d4ff?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/U9KNOWN_X)
 
@@ -93,28 +92,6 @@
 </td>
 </tr>
 </table>
-
----
-
-## 🔐 Security Architecture
-
-```
-  Your Machine                    Secure Server (Render)
-  ─────────────                   ──────────────────────
-  python ux.py
-       │
-       ├──── /verify ──────────►  License Check (Firebase)
-       │                          Session Token (60s TTL)
-       │     ◄────────────────── session_token + session_key
-       │
-       ├──── /fetch_core ──────►  XOR Encrypt core with session_key
-       │     ◄────────────────── Encrypted core bytes (one-time)
-       │
-       └──── XOR Decrypt
-             exec() in RAM ✅     ← Core NEVER touches disk
-```
-
-> 🛡️ Even if someone intercepts the traffic, the session token is already expired and single-use. The core key is never transmitted.
 
 ---
 
