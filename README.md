@@ -57,34 +57,16 @@
 
 ## ✨ Features
 
-<table>
-<tr>
-<td width="50%">
+<div align="center">
 
-### 🤖 AI Engine
-- XGBoost + LightGBM + CatBoost ensemble
-- Adaptive model weighting (last 50 trades)
-- 31+ technical indicators
-- Auto-adapts to live market performance
+| 🤖 AI Engine | 📊 Smart Analysis | ⚡ Performance |
+|:---:|:---:|:---:|
+| XGBoost + LightGBM + CatBoost | Market Regime Detection | Real-time WebSocket data |
+| Adaptive model weighting | Multi-Timeframe (1m/5m/15m) | Parallel signal processing |
+| 31+ technical indicators | Confidence scoring per signal | Sub-second execution |
+| Auto-adapts to live market | Per-asset performance tracking | 24/7 stable on VPS |
 
-### 📊 Smart Analysis
-- Market Regime Engine (Trending / Ranging / Volatile / Calm)
-- Multi-Timeframe Confirmation (1m / 5m / 15m)
-- Confidence scoring per signal
-- Per-asset & per-timeframe analytics
-
-</td>
-<td width="50%">
-
-### ⚡ Performance
-- Real-time WebSocket market data
-- Parallel signal processing
-- Sub-second execution
-- 24/7 stable on VPS
-
-</td>
-</tr>
-</table>
+</div>
 
 ---
 
