@@ -70,6 +70,24 @@
 
 ---
 
+## 🆕 What's New — V7 Ultra (Latest Update)
+
+<div align="center">
+
+| Feature | Description |
+|:--------|:------------|
+| 🧹 **Clean Main Menu** | Streamlined main menu with only 7 core options — no clutter |
+| ⚙️ **Configuration Submenu** | All settings (Domain, Account, Style, Mode, TP/SL) neatly in one place |
+| 🎰 **MTG Settings Panel** | Full Martingale configuration: toggle, multiplier, max levels, wait time (seconds) |
+| 🔐 **Change Credentials** | Update Quotex email/password or Telegram token at any time without restarting |
+| ⏱️ **Accurate MTG Timer** | Real-time second-by-second countdown displayed during MTG recovery wait |
+| 💾 **Persistent MTG Config** | MTG settings saved to `.mtg_config.json` — survive restarts |
+| 👤 **Developer Attribution** | `@U9KNOWN_X` shown on main menu header |
+
+</div>
+
+---
+
 ## ⚙️ Trading Modes
 
 <div align="center">
@@ -159,7 +177,57 @@ Once started, the bot authenticates with the server and launches:
 ✅ Core Unlocked. Launching...
 ```
 
-**You will be prompted for:**
+### 🏠 Main Menu
+
+```
+╔══════════════════════════════════════════════════════╗
+║          💎  UX PRO VIP  —  V7 ULTRA               ║
+║          ✦  Developed by  @U9KNOWN_X  ✦            ║
+╠══════════════════════════════════════════════════════╣
+║  1)  🚀  Start Signal Generator                     ║
+║  2)  📊  View Trading Strategies                    ║
+║  3)  ℹ️   Help & Instructions                       ║
+║  4)  📈  View Trading Statistics                    ║
+║  5)  🧠  Toggle AI Learning                         ║
+║  6)  📤  Send Test Signal                           ║
+╠══════════════════════════════════════════════════════╣
+║  7)  ⚙️   Configuration                             ║
+╠══════════════════════════════════════════════════════╣
+║  0)  ❌  Exit                                       ║
+╚══════════════════════════════════════════════════════╝
+```
+
+### ⚙️ Configuration Submenu (Option 7)
+
+All settings are neatly organised inside the Configuration menu:
+
+| Option | Setting | Description |
+|:------:|---------|-------------|
+| 1 | 🌐 Domain | Switch between International / Bangladesh |
+| 2 | 💳 Account Type | Demo / Live / Tournament |
+| 3 | 🔐 Change Credentials | Update Quotex email/password or Telegram token anytime |
+| 4 | 🎨 Signal Style | Choose signal message format |
+| 5 | ⏰ Timezone | Set your local timezone (UTC offset) |
+| 6 | 🎯 Trading Mode | SAFE / NORMAL / AGGRESSIVE / ELITE / CUSTOM |
+| 7 | 💰 Target Profit | Auto-stop session when profit target is reached |
+| 8 | 🛑 Stop Loss | Auto-stop session when loss limit is hit |
+| 9 | 🎰 MTG Settings | Full Martingale recovery configuration |
+| A | 📱 Telegram Channel | Configure signal forwarding channel |
+
+### 🎰 MTG (Martingale) Settings
+
+Configure Martingale recovery from the Configuration → MTG Settings panel:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Enable/Disable | ✅ On | Turn MTG recovery on or off |
+| Multiplier | 2.0x | Amount to multiply after a loss |
+| Max Levels | 3 | Maximum consecutive recovery attempts |
+| Wait Time | 60s | Seconds to wait before placing MTG trade |
+
+> MTG settings are saved persistently — they survive bot restarts.
+
+**On first run, you will be prompted for:**
 
 | # | Input | Description |
 |:-:|-------|-------------|
@@ -167,12 +235,11 @@ Once started, the bot authenticates with the server and launches:
 | 2 | Quotex Password | Your Quotex account password |
 | 3 | Telegram Bot Token | From [@BotFather](https://t.me/BotFather) |
 | 4 | Telegram Chat ID | From [@userinfobot](https://t.me/userinfobot) |
-| 5 | Strategy | `Ultra Hybrid` recommended |
-| 6 | Timeframe | `1`, `2`, or `5` minutes |
-| 7 | Trade Amount | Amount in USD per trade |
-| 8 | Mode | `SAFE` recommended for beginners |
+| 5 | Timeframe | `1`, `2`, or `5` minutes |
+| 6 | Trade Amount | Amount in USD per trade |
+| 7 | Mode | `SAFE` recommended for beginners |
 
-> 🔐 Credentials are encrypted with a hardware-derived key and saved locally — you won't need to re-enter them next time.
+> 🔐 Credentials are encrypted with a hardware-derived key and saved locally — you won't need to re-enter them next time. You can update them anytime via **Configuration → Change Credentials**.
 
 ---
 
