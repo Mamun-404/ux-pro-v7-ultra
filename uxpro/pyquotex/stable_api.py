@@ -1,7 +1,6 @@
 import time
 import logging
 import asyncio
-from pathlib import Path
 from datetime import datetime
 from . import expiration
 from . import global_value
@@ -14,7 +13,6 @@ from .utils.processor import (
     process_tick,
     aggregate_candle
 )
-from .config_domain import resolve_qx_domain
 from .config import (
     load_session,
     update_session,
@@ -37,8 +35,7 @@ class Quotex:
             root_path=".",
             user_data_dir="browser",
             asset_default="EURUSD",
-            period_default=60,
-            domain=None
+            period_default=60
     ):
         self.size = [
             5,
@@ -74,7 +71,6 @@ class Quotex:
         self.websocket_client = None
         self.websocket_thread = None
         self.debug_ws_enable = False
-        self.domain = domain or resolve_qx_domain()
         self.resource_path = resource_path(root_path)
         session = load_session(user_agent)
         self.session_data = session
@@ -218,44 +214,32 @@ class Quotex:
 
         return new_candles
 
-    async def connect(self, max_attempts: int = 5):
-        for attempt in range(1, max_attempts + 1):
-            self.api = QuotexAPI(
-                self.domain,
-                self.email,
-                self.password,
-                self.lang,
-                resource_path=self.resource_path,
-                user_data_dir=self.user_data_dir
-            )
-            await self.close()
-            self.api.trace_ws = self.debug_ws_enable
-            self.api.session_data = self.session_data
-            self.api.current_asset = self.asset_default
-            self.api.current_period = self.period_default
-            global_value.SSID = self.session_data.get("token")
+    async def connect(self):
+        self.api = QuotexAPI(
+            "qxbroker.com",
+            self.email,
+            self.password,
+            self.lang,
+            resource_path=self.resource_path,
+            user_data_dir=self.user_data_dir
+        )
+        await self.close()
+        self.api.trace_ws = self.debug_ws_enable
+        self.api.session_data = self.session_data
+        self.api.current_asset = self.asset_default
+        self.api.current_period = self.period_default
+        global_value.SSID = self.session_data.get("token")
 
-            if not self.session_data.get("token"):
-                await self.api.authenticate()
+        if not self.session_data.get("token"):
+            await self.api.authenticate()
 
-            check, reason = await self.api.connect(self.account_is_demo)
+        check, reason = await self.api.connect(self.account_is_demo)
 
-            if await self.check_connect():
-                return check, reason
+        if not await self.check_connect():
+            logger.debug("Reconnecting on websocket")
+            return await self.connect()
 
-            logger.warning(f"Connection attempt {attempt}/{max_attempts} failed. Retrying...")
-
-            # Delete stale session file to force fresh login on next attempt (same as app.py pattern)
-            session_file = Path(self.resource_path) / "session.json"
-            if session_file.exists():
-                session_file.unlink()
-                logger.debug("Stale session file removed.")
-                self.session_data = {}
-
-            await asyncio.sleep(2)
-
-        logger.error(f"Failed to connect after {max_attempts} attempts.")
-        return False, "Max connection attempts reached."
+        return check, reason
 
     async def reconnect(self):
         await self.api.authenticate()
